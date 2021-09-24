@@ -5,10 +5,12 @@ const app = express();
 
 app.use(cors());
 
-
-
-
-
+app.use((error, req, res, next) => {
+  res.status(400).json({
+    message: "An Error Occured",
+    error,
+  });
+});
 
 //server code
 const server = app.listen(5000, async () => {
