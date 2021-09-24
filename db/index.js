@@ -18,3 +18,6 @@ const Comment = sequelize.define("comment", {
   },
 });
 
+module.exports = {
+  Comment,
+};
