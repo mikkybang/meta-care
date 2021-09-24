@@ -12,7 +12,6 @@ app.use(cors());
 
 //server code
 const server = app.listen(5000, async () => {
-  // mailer.sendGrid({ data: {}, templateId: "msdovm", to: "mlsdmv" });
   console.log(`running → PORT ${server.address().port}`);
 });
 
