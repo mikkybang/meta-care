@@ -2,8 +2,9 @@ const { create } = require("../services/comment");
 
 const createController = async (req, res, next) => {
   try {
+      console.log(req.ip)
     const data = {
-      ip_address: req.ip,
+      ip_address: '127.0.0.1',
       ...req.body,
     };
 

@@ -14,6 +14,7 @@ const create = async (data) => {
   if (error) {
     throw new Error(error);
   }
+  console.log(value);
   const comment = await Comment.create(value);
   return comment;
 };
