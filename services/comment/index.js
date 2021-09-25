@@ -1,6 +1,8 @@
 const { create } = require("./create");
-// const { } = require("./getComment")
+const { get, getOne } = require("./get");
 
 module.exports = {
   create,
+  get,
+  getOne,
 };

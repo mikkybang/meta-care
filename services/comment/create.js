@@ -15,6 +15,7 @@ const create = async (data) => {
     throw new Error(error);
   }
   const comment = await Comment.create(value);
+
   return comment;
 };
 
