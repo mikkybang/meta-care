@@ -3,7 +3,11 @@ const cors = require("cors");
 
 const app = express();
 
+const commentRoute = require("./routes/comment");
+
 app.use(cors());
+
+app.use("/comment", commentRoute);
 
 app.use((error, req, res, next) => {
   res.status(400).json({

@@ -2,7 +2,7 @@ const Joi = require("joi");
 
 const { Comment } = require("../../db");
 
-const createComment = async (data) => {
+const create = async (data) => {
   const commentData = Joi.object({
     episode_id: Joi.number().min(1).max(6).required(),
     ip_address: Joi.string().required(),
@@ -19,5 +19,5 @@ const createComment = async (data) => {
 };
 
 module.exports = {
-  createComment,
+  create,
 };
