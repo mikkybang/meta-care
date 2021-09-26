@@ -1,9 +1,12 @@
+const requestIp = require("request-ip");
+
 const { create, get, getOne } = require("../services/comment");
 
 const createController = async (req, res, next) => {
   try {
+    const ip_address = requestIp.getClientIp(req);
     const data = {
-      ip_address: req.ip,
+      ip_address,
       ...req.body,
     };
 
@@ -34,5 +37,5 @@ const getCommentByEpisodeId = async (req, res, next) => {
 
 module.exports = {
   createController,
-  getCommentByEpisodeId
+  getCommentByEpisodeId,
 };
