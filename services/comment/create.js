@@ -6,7 +6,7 @@ const create = async (data) => {
   const commentData = Joi.object({
     episode_id: Joi.number().min(1).max(6).required(),
     ip_address: Joi.string().required(),
-    comment: Joi.string().max(500),
+    comment: Joi.string().max(500).required(),
   });
 
   const { error, value } = commentData.validate(data);
