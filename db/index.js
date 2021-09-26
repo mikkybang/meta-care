@@ -2,16 +2,11 @@ const Sequelize = require("sequelize");
 
 let sequelize;
 
-// sequelize = new Sequelize({ dialect: "sqlite", storage: "../database.sqlite" });
+sequelize = new Sequelize({ dialect: "sqlite", storage: "../database.sqlite" });
 
-sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL);
+// sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL);
 
 // mysql://b79aa396e5fb85:16f3b5bf@us-cdbr-east-04.cleardb.com/heroku_b871a5b68c78528?reconnect=true
-
-
-DATABASE_USERNAME = "b79aa396e5fb85"
-DATABASE_NAME = "heroku_b871a5b68c78528"
-DATABASE_PASSWORD = "16f3b5bf"
 
 
 const Comment = sequelize.define("comment", {

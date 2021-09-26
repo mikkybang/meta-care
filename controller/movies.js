@@ -12,6 +12,19 @@ const getAllController = async (req, res, next) => {
   }
 };
 
+const getOneController = async (req, res, next) => {
+  try {
+    const episodeId = req.params.episode_id;
+    const result = await getOne(episodeId);
+    res.status(200).json({
+      result,
+    });
+    return;
+  } catch (error) {
+    next(error);
+  }
+};
+
 getCharactersController = async (req, res, next) => {
   try {
     const episodeId = req.params.episode_id;
@@ -31,4 +44,5 @@ getCharactersController = async (req, res, next) => {
 module.exports = {
   getAllController,
   getCharactersController,
+  getOneController,
 };
