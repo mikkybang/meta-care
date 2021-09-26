@@ -17,7 +17,17 @@ const getOne = async (query) => {
   return comment;
 };
 
+const getCommentCount = async (query) => {
+  const count = await Comment.count({
+    where: query,
+    raw: true,
+  });
+
+  return count;
+};
+
 module.exports = {
   get,
   getOne,
+  getCommentCount
 };
