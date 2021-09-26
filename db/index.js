@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 
 let sequelize;
 
-sequelize = new Sequelize({ dialect: "sqlite", storage: "../database.sqlite" });
+sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL);
 
 const Comment = sequelize.define("comment", {
   comment: {
