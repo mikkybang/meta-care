@@ -22,8 +22,10 @@ app.use((error, req, res, next) => {
   });
 });
 
+const port = process.env.port || 5000;
+
 //server code
-const server = app.listen(5000, async () => {
+const server = app.listen(port, async () => {
   console.log(`running → PORT ${server.address().port}`);
 });
 
