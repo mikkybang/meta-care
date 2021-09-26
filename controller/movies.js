@@ -15,7 +15,11 @@ const getAllController = async (req, res, next) => {
 getCharactersController = async (req, res, next) => {
   try {
     const episodeId = req.params.episode_id;
-    const result = await getCharacters(episodeId);
+
+    const sortBy = req.query.sort;
+    const order = req.query.order;
+    const filter = req.query.filter;
+    const result = await getCharacters(episodeId, sortBy, order, filter);
     res.status(200).json({
       result,
     });
@@ -26,4 +30,5 @@ getCharactersController = async (req, res, next) => {
 
 module.exports = {
   getAllController,
+  getCharactersController,
 };
