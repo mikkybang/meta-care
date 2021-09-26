@@ -16,9 +16,10 @@ app.use("/comment", commentRoute);
 app.use("/movies", movieRoute);
 
 app.use((error, req, res, next) => {
+  console.log(error);
   res.status(400).json({
     message: "An Error Occured",
-    error,
+    error: error.message,
   });
 });
 
