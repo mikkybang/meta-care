@@ -17,10 +17,17 @@ app.use("/movies", movieRoute);
 
 app.use((error, req, res, next) => {
   console.log(error);
-  res.status(400).json({
-    message: "An Error Occured",
-    error: error.message,
-  });
+  if (err.status === 404) {
+    return res.status(200).json({
+      message:
+        "No resource avaliable on this route visit: https://github.com/mikkybang/meta-care#readme",
+    });
+  } else {
+    res.status(400).json({
+      message: "An Error Occured",
+      error: error.message,
+    });
+  }
 });
 
 const port = process.env.PORT || 5000;
