@@ -1,4 +1,5 @@
 const swapi = require("swapi-node");
+const { format } = require("footinch");
 
 const { getCommentCount } = require("../comment");
 
@@ -81,12 +82,15 @@ const getCharacters = async (
   });
 
   const totalHeight = result.reduce(function (acc, obj) {
-    return acc + obj.height;
+    return acc + Number(obj.height);
   }, 0);
+
+  const formatter = format.CM.to.FT.IN.FRAC(32, [" ft ", " in"]); // Format to 1/32, adding custom unit sufixes
 
   const metadata = {
     total_characters: result.length,
     total_height_cm: totalHeight,
+    total_height_feet_inches: formatter(totalHeight),
   };
 
   return { characters: result, metadata };
