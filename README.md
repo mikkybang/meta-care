@@ -21,7 +21,7 @@ None
   **Required:**
 
   `episode_id=[integer][range from 1 - 6]`
-  `string=[string][max 500 characters]`
+  `comment=[string][max 500 characters]`
 
 - **Success Response:**
 
